@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            color: green;
+            text-align: center;
+        }
+        table{
+            text-align: center;
+            padding: 2px;
+            color: rebeccapurple;
+            background-color: pink;
+            border: 2px solid black;
+        }
+        caption{
+            text-align: center;
+            color: red;
+        }
+        th,td{
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Company lists::</h1>
+<hr/>
+    <hr/>
+<br/>
+    <br/>
+{% if comp %}
+<table border="2">
+    <caption>Company list</caption>
+    <thead>
+    <tr>
+        <th>COmpno</th>
+        <th>Compname</th>
+        <th>Noofempl</th>
+        <th>compaddr</th>
+        <th>compshare</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    {% for com in comp %}
+    <tr>
+        <td>{{ com.compid }}</td>
+        <td>{{ com.compname }}</td>
+        <td>{{ com.noofemps }}</td>
+        <td>{{ com.compaddr }}</td>
+        <td>{{ com.compshare }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    {% else %}
+    <p>No records</p>
+{% endif %}
+</body>
+</html>

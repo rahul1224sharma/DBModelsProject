@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee DBModelApp</title>
+    <style>
+        h1{
+            color: blue;
+            background-color: yellow;
+            text-align: center;
+            border: 2px solid brown;
+        }
+        table{
+            border: 2px solid blue;
+            background-color: pink;
+            text-align: center;
+            display: table-caption;
+
+        }
+        th,td{
+            padding: 5px;
+        }
+
+    caption{
+        text-align: center;
+        color: red;
+        padding: 5px;
+
+    }
+    </style>
+</head>
+<body>
+    <h1>The Employeeslist is:</h1>
+    <hr/>
+    <br/>
+    {% if emplist %}
+    <table border="2">
+        <caption>
+            Employee Details
+        </caption>
+        <thead>
+        <th>Empno</th>
+        <th>Empname</th>
+        <th>Esal</th>
+        <th>Eaddr</th>
+        </thead>
+        <tbody>
+            {% for emp in emplist %}
+            <tr>
+            <td>{{ emp.eno }}</td>
+            <td>{{ emp.ename }}</td>
+            <td>{{ emp.esal }}</td>
+            <td>{{ emp.eaddr }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No records</p>
+{% endif %}
+</body>
+</html>
